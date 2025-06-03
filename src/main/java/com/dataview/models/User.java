@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -23,6 +24,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", unique = true)
     private Long id;
+
+    @JsonIgnore
+    @Column(name = "user_password", nullable = false)
+    @Size(min = 8, max = 100)
+    @NotBlank
+    private String password;
 
     @Column(name = "username", nullable = false, length = 100)
     @Size(min = 3, max = 100)
