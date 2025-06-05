@@ -22,16 +22,16 @@ public class Administrator {
     @Column(name = "adm_id", unique = true)
     private Long id;
 
-    @Column(nullable = false, length = 60, unique = true)
+    @Column(name = "adm_email",nullable = false, length = 60, unique = true)
     @NotBlank
     private String email;
 
-    @Column(name = "adm_id", nullable = false)
+    @Column(name = "adm_name", nullable = false)
     @NotBlank
     private String name;
 
     @JsonIgnore
-    @Column(nullable = false)
+    @Column(name = "adm_password", nullable = false)
     @Size(min = 8)
     private String password;
 
