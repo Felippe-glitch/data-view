@@ -73,9 +73,10 @@ public class User {
     public User() {
     }
 
-    public User(String name, String rg, String cpf, String dataBirth, MaritalStatus maritalStatus, String number,
+    public User(String name, String password, String rg, String cpf, String dataBirth, MaritalStatus maritalStatus, String number,
             String email, Address adress) {
         this.name = name;
+        this.password = password;
         this.rg = rg;
         this.cpf = cpf;
         this.dataBirth = dataBirth;
@@ -93,6 +94,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
